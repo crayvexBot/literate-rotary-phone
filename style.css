@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial;
+}
+
+/* 🌄 ANIMATED SKY */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87ceeb, #1e90ff);
+  z-index: -2;
+  animation: skyMove 20s linear infinite;
+}
+
+@keyframes skyMove {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* 🌱 GROUND TEXTURE */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 35%;
+  background: repeating-linear-gradient(
+    0deg,
+    #3b7d1f,
+    #3b7d1f 10px,
+    #2f5e18 10px,
+    #2f5e18 20px
+  );
+  z-index: -1;
+}
+
+/* UI */
+#menu {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+button {
+  padding: 12px;
+  font-size: 18px;
+}
+
+#ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  z-index: 10;
+}
+
+/* MOBILE CONTROLS */
+#tapLeft, #tapRight {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+#tapLeft { left: 0; }
+#tapRight { right: 0; }

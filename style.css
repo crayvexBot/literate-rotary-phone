@@ -1,72 +1,64 @@
 body {
-  margin: 0;
-  overflow: hidden;
-  font-family: Arial;
+  margin:0;
+  overflow:hidden;
+  font-family:Arial;
+  color:white;
 }
 
-/* 🌄 ANIMATED SKY */
+/* 🌄 Animated sky */
 body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #87ceeb, #1e90ff);
-  z-index: -2;
-  animation: skyMove 20s linear infinite;
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:linear-gradient(#87ceeb,#1e90ff);
+  animation:sky 20s linear infinite;
+  z-index:-2;
 }
 
-@keyframes skyMove {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+@keyframes sky {
+  0%{filter:hue-rotate(0)}
+  100%{filter:hue-rotate(360deg)}
 }
 
-/* 🌱 GROUND TEXTURE */
+/* 🌱 ground */
 body::after {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 35%;
-  background: repeating-linear-gradient(
-    0deg,
-    #3b7d1f,
-    #3b7d1f 10px,
-    #2f5e18 10px,
-    #2f5e18 20px
-  );
-  z-index: -1;
+  content:"";
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:30%;
+  background:#3b7d1f;
+  z-index:-1;
 }
 
-/* UI */
-#menu {
-  position: absolute;
-  top: 30%;
-  width: 100%;
-  text-align: center;
-  color: white;
-  z-index: 10;
+.panel {
+  position:absolute;
+  top:30%;
+  width:100%;
+  text-align:center;
+  display:none;
 }
+
+#menu { display:block; }
 
 button {
-  padding: 12px;
-  font-size: 18px;
+  margin:5px;
+  padding:10px;
 }
 
-#ui {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: white;
-  z-index: 10;
+#hud {
+  position:absolute;
+  top:10px;
+  left:10px;
+  z-index:10;
 }
 
-/* MOBILE CONTROLS */
 #tapLeft, #tapRight {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
+  position:absolute;
+  top:0;
+  width:50%;
+  height:100%;
 }
-
-#tapLeft { left: 0; }
-#tapRight { right: 0; }
+#tapLeft { left:0; }
+#tapRight { right:0; }

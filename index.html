@@ -1,24 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>3Dash</title>
-  <link rel="stylesheet" href="style.css">
+<title>3Dash</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- MENU -->
+<!-- MAIN MENU -->
 <div id="menu">
   <h1>3Dash</h1>
+  <button onclick="showLogin()">Login</button>
+  <button onclick="showSignup()">Sign Up</button>
+  <button onclick="showLevels()">View Levels</button>
+  <button onclick="openShop()">Icons</button>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="panel">
+  <h2>Login</h2>
+  <input id="loginUser" placeholder="Username"><br>
+  <input id="loginPass" type="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+  <button onclick="backMenu()">⬅ Back</button>
+</div>
+
+<!-- SIGNUP -->
+<div id="signup" class="panel">
+  <h2>Sign Up</h2>
+  <input id="email" placeholder="Email"><br>
+  <input id="user" placeholder="Username"><br>
+  <input id="pass" type="password"><br>
+  <button onclick="signup()">Sign Up</button>
+  <button onclick="backMenu()">⬅ Back</button>
+</div>
+
+<!-- VERIFY -->
+<div id="verify" class="panel">
+  <h2>Verification</h2>
+  <p id="codeText"></p>
+  <input id="codeInput"><br>
+  <button onclick="verify()">Confirm</button>
+  <button onclick="backMenu()">⬅ Back</button>
+</div>
+
+<!-- LEVEL SELECT -->
+<div id="levels" class="panel">
+  <h2 id="lvlName"></h2>
+  <p id="lvlDiff"></p>
   <button onclick="startGame()">Play</button>
+
+  <button id="left" onclick="prevLevel()">◀</button>
+  <button id="right" onclick="nextLevel()">▶</button>
+
+  <button onclick="backMenu()">⬅ Back</button>
+</div>
+
+<!-- SHOP -->
+<div id="shop" class="panel">
+  <h2>Icons</h2>
+  <button onclick="selectIcon(0)">-_-</button>
+  <button onclick="selectIcon(1)">:)</button>
+  <button onclick="selectIcon(2)">>:)</button>
+  <button onclick="backMenu()">⬅ Back</button>
 </div>
 
 <!-- GAME UI -->
-<div id="ui">
-  Score: <span id="score">0</span>
+<div id="hud">
+  Score: <span id="score">0</span><br>
+  Attempt: <span id="attempt">0</span><br>
+  Time: <span id="time">0</span><br>
+  Stars Earned: <span id="starsEarned">0</span>
 </div>
 
-<!-- MOBILE TAP -->
+<!-- GAME OVER -->
+<div id="gameOver" class="panel">
+  <h1>You Died</h1>
+  <button onclick="restart()">Retry</button>
+  <button onclick="backMenu()">Exit</button>
+</div>
+
+<!-- MOBILE -->
 <div id="tapLeft"></div>
 <div id="tapRight"></div>
 
